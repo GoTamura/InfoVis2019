@@ -29,8 +29,8 @@ Vec3.prototype.mid = function()
   var min = this.min();
   var max = this.max();
   if (this.x != min && this.x != max) return this.x;
-  else if (this.y != min && this.y != max) return this.x;
-  else if (this.z != min && this.z != max) return this.x;
+  else if (this.y != min && this.y != max) return this.y;
+  else if (this.z != min && this.z != max) return this.z;
 }
 
 Vec3.prototype.max = function()
