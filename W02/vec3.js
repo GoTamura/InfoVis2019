@@ -38,7 +38,21 @@ Vec3.prototype.max = function()
   return Math.max(this.x, this.y, this.z);
 }
 
+Vec3.prototype.length = function()
+{
+  return Math.sqrt(this.x*this.x + this.y*this.y + this.z*this.z);
+}
+
+Vec3.prototype.sub = function(v)
+{
+  return new Vec3(this.x - v.x, this.y - v.y, this.z - v.z);
+}
+
 function AreaOfTriangle( v0, v1, v2)
 {
-  return Math.abs((v0.x - v2.x) * (v1.y - v2.y) - (v1.x - v2.x) * (v0.y - v2.y)) / 2
+  len0 = v0.sub(v1).length();
+  len1 = v0.sub(v2).length();
+  len2 = v2.sub(v1).length();
+  s = (len0 + len1 + len2) / 2;
+  return Math.round(Math.sqrt(s * (s - len0) * (s - len1) * (s - len2)) * 1000) / 1000;
 }
