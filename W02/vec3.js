@@ -50,9 +50,9 @@ Vec3.prototype.sub = function(v)
 
 function AreaOfTriangle( v0, v1, v2)
 {
-  len0 = v0.sub(v1).length();
-  len1 = v0.sub(v2).length();
-  len2 = v2.sub(v1).length();
-  s = (len0 + len1 + len2) / 2;
+  const len0 = v0.sub(v1).length();
+  const len1 = v0.sub(v2).length();
+  const len2 = v2.sub(v1).length();
+  const s = (len0 + len1 + len2) / 2;
   return Math.round(Math.sqrt(s * (s - len0) * (s - len1) * (s - len2)) * 1000) / 1000;
 }
