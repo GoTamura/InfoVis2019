@@ -3,44 +3,33 @@
     <title>Task1</title>
   </head>
   <body>
-    v0
-    <input type="text" id="v0x"/>
-    <input type="text" id="v0y"/>
-    <input type="text" id="v0z"/>
+    v0 = 
+    <input type="text" id="x0"/>
+    <input type="text" id="y0"/>
+    <input type="text" id="z0"/>
     <br>
-    v1
-    <input type="text" id="v1x"/>
-    <input type="text" id="v1y"/>
-    <input type="text" id="v1z"/>
+    v1 =
+    <input type="text" id="x1"/>
+    <input type="text" id="y1"/>
+    <input type="text" id="z1"/>
     <br>
-    v2
-    <input type="text" id="v2x"/>
-    <input type="text" id="v2y"/>
-    <input type="text" id="v2z"/>
+    v2 =
+    <input type="text" id="x2"/>
+    <input type="text" id="y2"/>
+    <input type="text" id="z2"/>
     <br>
-    <input type="button" value="Culc" onclick="clicked()">
+    <input type="button" value="Calc" onclick="clicked()">
+    <br>
+    ans = <input type="text" id="ans"/>
     <script src="vec3.js"></script>
     <script>
       function clicked() {
-      var x0, y0, z0; // (input vertex 0)
-      var x1, y1, z1; // (input vertex 1)
-      var x2, y2, z2; // (input vertex 2)
-
-      x0 = v0x.value;
-      y0 = v0y.value;
-      z0 = v0z.value;
-      x1 = v1x.value;
-      y1 = v1y.value;
-      z1 = v1z.value;
-      x2 = v2x.value;
-      y2 = v2y.value;  
-      z2 = v2z.value;
-      var v0 = new Vec3( x0, y0, z0 );
-      var v1 = new Vec3( x1, y1, z1 );
-      var v2 = new Vec3( x2, y2, z2 );
+      var v0 = new Vec3( x0.value, y0.value, z0.value );
+      var v1 = new Vec3( x1.value, y1.value, z1.value );
+      var v2 = new Vec3( x2.value, y2.value, z2.value );
       var S = AreaOfTriangle( v0, v1, v2 ); // (output value)
 
-      document.write("AreaOfTriange =  " + S);
+      document.getElementById("ans").value = S;
       }
     </script>
   </body>
