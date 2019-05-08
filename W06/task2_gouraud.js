@@ -1,4 +1,4 @@
-function phong_main()
+function gouraud_main()
 {
     var width = 500;
     var height = 500;
@@ -25,11 +25,10 @@ function phong_main()
     var geometry = new THREE.TorusKnotGeometry( 1, 0.3, 100, 20 );
     var material = new THREE.ShaderMaterial({
         vertexColors: THREE.VertexColors,
-        vertexShader: document.getElementById('phong.vert').text,
-        fragmentShader: document.getElementById('phong.frag').text,
+        vertexShader: document.getElementById('gouraud.vert').text,
+        fragmentShader: document.getElementById('gouraud.frag').text,
         uniforms: {
-          light_position: {type: 'v3', value: light.position},
-          camera_position: {type: 'v3', value: camera.position}
+          light_position: {type: 'v3', value: light.position}
         }
     });
 
