@@ -59,5 +59,30 @@ function main()
         renderer.render( scene, camera );
       };
 
+      document.addEventListener('mousedown', e => {
+        let x_win = e.clientX;
+        let y_win = e.clientY;
+
+        let vx = renderer.domElement.offsetLeft;
+        let vy = renderer.domElement.offsetTop;
+        let vw = renderer.domElement.width;
+        let vh = renderer.domElement.height;
+
+        let x_NDC = 2 * (x_win - vx) / vw - 1;
+        let y_NDC = - (2 * (y_win - vy) / vh - 1);
+
+        let p_NDC = new THREE.Vector3(x_NDC, y_NDC, 1);
+        let p_wld = p_NDC.unproject(camera);
+        let origin = camera.position;
+        let direction = p_wld.sub(camera.position).normalize() ;
+
+        let raycaster = new THREE.Raycaster(origin, direction);
+        let intersects = raycaster.intersectObject(cube);
+        if (intersects.length > 0) {
+          intersects[0].face.color.setRGB(0, 1, 0);
+          intersects[0].object.geometry.colorsNeedUpdate = true;
+        }
+      });
+
       animate();
 }
