@@ -19,6 +19,7 @@ function main()
 
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( width, height );
+    renderer.debug.checkShaderErrors = true;
     document.body.appendChild( renderer.domElement );
 
     var geometry = new THREE.TorusKnotGeometry( 1, 0.3, 100, 20 );
@@ -27,7 +28,8 @@ function main()
         vertexShader: document.getElementById('shader.vert').text,
         fragmentShader: document.getElementById('shader.frag').text,
         uniforms: {
-          light_position: {type: 'v3', value: light.position}
+          light_position: {type: 'v3', value: light.position},
+          camera_position: {type: 'v3', value: camera.position}
         }
     });
 
