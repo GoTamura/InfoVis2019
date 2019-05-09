@@ -19,8 +19,8 @@ function phong_main()
 
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( width, height );
-    document.body.appendChild( renderer.domElement );
     renderer.debug.checkShaderErrors = true;
+    document.body.appendChild( renderer.domElement );
 
     var geometry = new THREE.TorusKnotGeometry( 1, 0.3, 100, 20 );
     var material = new THREE.ShaderMaterial({

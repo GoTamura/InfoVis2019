@@ -19,6 +19,7 @@ function lambert_main()
 
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( width, height );
+    renderer.debug.checkShaderErrors = true;
     document.body.appendChild( renderer.domElement );
 
     var geometry = new THREE.TorusKnotGeometry( 1, 0.3, 100, 20 );
