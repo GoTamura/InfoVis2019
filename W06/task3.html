@@ -9,6 +9,20 @@
             varying vec3 point_color;
             varying vec4 point_position;
             varying vec3 normal_vector;
+
+            void main()
+            {
+                point_position = modelViewMatrix * vec4( position, 1.0 );
+                normal_vector = normalMatrix * normal;
+                point_color = color;
+                gl_Position = projectionMatrix * point_position;
+	    }
+	</script>
+
+	<script type="x-shader/x-fragment" id="shader.frag">
+            varying vec3 point_color;
+            varying vec4 point_position;
+            varying vec3 normal_vector;
             uniform vec3 light_position;
             uniform vec3 camera_position;
 
@@ -29,25 +43,14 @@
                 return C * ( Ia + Id + Is );
             }
 
-            void main()
-            {
-                point_position = modelViewMatrix * vec4( position, 1.0 );
-                normal_vector = normalMatrix * normal;
-                vec3 C = color;
+	    void main()
+	    {
+                vec3 C = point_color;
                 vec3 L = normalize( light_position - point_position.xyz );
                 vec3 N = normalize( normal_vector );
                 vec3 V = normalize( camera_position - point_position.xyz );
-                point_color = BlinnPhongReflection( C, L, N, V );
-                gl_Position = projectionMatrix * point_position;
-	    }
-	</script>
-
-	<script type="x-shader/x-fragment" id="shader.frag">
-            varying vec3 point_color;
-
-	    void main()
-	    {
-	        gl_FragColor = vec4( point_color, 1.0 );
+                vec3 pcolor = BlinnPhongReflection(C, L, N, V);
+	        gl_FragColor = vec4( pcolor, 1.0 );
 	    }
 	</script>
 	<script src="task03.js"></script>
