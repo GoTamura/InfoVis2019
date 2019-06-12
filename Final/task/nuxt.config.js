@@ -1,8 +1,15 @@
 const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
   router: {
     base: '/InfoVis2019/Final/task/dist/'
-  }
-} : {}
+  },
+  head: {
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/InfoVis2019/Final/task/dist/favicon.ico' }]
+  },
+} : {
+  head: {
+    link: [{ rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }]
+  },
+}
 export default {
   ...routerBase,
   mode: 'spa',
@@ -20,7 +27,7 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    //link: [{ rel: 'icon', type: 'image/x-icon', href: '/InfoVis2019/Final/task/dist/favicon.ico' }]
   },
   /*
    ** Customize the progress-bar color
