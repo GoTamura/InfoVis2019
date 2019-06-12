@@ -1,4 +1,10 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/InfoVis2019/'
+  }
+} : {}
 export default {
+  ...routerBase,
   mode: 'spa',
   /*
    ** Headers of the page
@@ -45,4 +51,5 @@ export default {
      */
     extend(config, ctx) {}
   }
+
 }
