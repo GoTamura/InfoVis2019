@@ -1,16 +1,27 @@
 <template>
   <div id="app">
+    <slider v-on:child-event="parentMethod"></slider>
     <rotate-box></rotate-box>
+    <shader-box></shader-box>
   </div>
 </template>
 
 <script>
 import RotateBox from '../components/RotateBox'
+import Slider from '../components/Slider'
+import ShaderBox from '../components/ShaderBox'
 
 export default {
   name: 'App',
   components: {
-    RotateBox
+    RotateBox,
+    Slider,
+    ShaderBox
+  },
+  methods: {
+    parentMethod(fromChildVal) {
+      alert(fromChildVal)
+    }
   }
 }
 </script>

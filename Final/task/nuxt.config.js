@@ -45,8 +45,6 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://bootstrap-vue.js.org/docs/
-    'bootstrap-vue/nuxt',
     '@nuxtjs/eslint-module'
   ],
   /*
@@ -56,7 +54,18 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    extend(config, ctx) {
+      config.module.rules.push({
+        test: /\.(glsl|frag|vert)$/,
+        loader: 'raw-loader',
+        exclude: /node_modules/
+      })
+      config.module.rules.push({
+        test: /\.(glsl|frag|vert)$/,
+        loader: 'glslify-loader',
+        exclude: /node_modules/
+      })
+    }
   }
 
 }
