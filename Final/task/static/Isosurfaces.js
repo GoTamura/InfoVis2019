@@ -113,8 +113,7 @@ function Isosurfaces( volume, isovalue )
     {
         let s0 = volume.values[v0.x + v0.y * volume.resolution.x + v0.z * volume.resolution.x * volume.resolution.y];
         let s1 = volume.values[v1.x + v1.y * volume.resolution.x + v1.z * volume.resolution.x * volume.resolution.y];
-        //let a = (s - s0)/(s1-s0);
-        let a = 0.5
+        let a = (s - s0)/(s1-s0);
         return new THREE.Vector3().addVectors( v0.multiplyScalar( a ), v1.multiplyScalar( 1.-a ) );
     }
 }
