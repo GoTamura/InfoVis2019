@@ -1,5 +1,5 @@
 <template>
-  <canvas id="canvas" width="600" height="400"></canvas>
+  <canvas id="canvas_shaderBox" width="600" height="400"></canvas>
 </template>
 
 <script>
@@ -31,7 +31,7 @@ export default {
     return { scene, renderer, camera, light, geometry, material, cube }
   },
   mounted() {
-    const $canvas = document.getElementById('canvas')
+    const $canvas = document.getElementById('canvas_shaderBox')
     // canvasを後付けで設定する方法あったら教えてほしいー
     this.renderer = new THREE.WebGLRenderer({
       antialias: true,

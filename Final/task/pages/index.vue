@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <slider v-on:child-event="parentMethod"></slider>
+    <slider @:child-event="parentMethod"></slider>
+    <call-external-function></call-external-function>
     <rotate-box></rotate-box>
     <shader-box></shader-box>
   </div>
@@ -10,13 +11,15 @@
 import RotateBox from '../components/RotateBox'
 import Slider from '../components/Slider'
 import ShaderBox from '../components/ShaderBox'
+import CallExternalFunction from '../components/CallExternalFunction'
 
 export default {
   name: 'App',
   components: {
     RotateBox,
     Slider,
-    ShaderBox
+    ShaderBox,
+    CallExternalFunction
   },
   methods: {
     parentMethod(fromChildVal) {

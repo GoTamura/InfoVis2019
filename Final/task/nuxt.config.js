@@ -27,6 +27,10 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
+   // script: [
+   //   { src: 'http://naohisas.github.io/KVS.js/Build/KVS.min.js' },
+   //   { src: 'http://naohisas.github.io/KVS.js/Build/KVS2THREE.min.js'}
+   // ],
     //link: [{ rel: 'icon', type: 'image/x-icon', href: '/InfoVis2019/Final/task/dist/favicon.ico' }]
   },
   /*
