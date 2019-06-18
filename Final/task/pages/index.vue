@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <slider @:child-event="parentMethod"></slider>
+    <isosurface></isosurface>
     <call-external-function></call-external-function>
     <rotate-box></rotate-box>
     <shader-box></shader-box>
@@ -12,6 +13,7 @@ import RotateBox from '../components/RotateBox'
 import Slider from '../components/Slider'
 import ShaderBox from '../components/ShaderBox'
 import CallExternalFunction from '../components/CallExternalFunction'
+import Isosurface from '../components/Isosurface'
 
 export default {
   name: 'App',
@@ -19,7 +21,8 @@ export default {
     RotateBox,
     Slider,
     ShaderBox,
-    CallExternalFunction
+    CallExternalFunction,
+    Isosurface
   },
   methods: {
     parentMethod(fromChildVal) {
