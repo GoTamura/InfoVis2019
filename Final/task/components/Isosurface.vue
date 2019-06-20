@@ -50,7 +50,13 @@ export default {
           defer: false,
           body: true
         },
-        { type: 'text/javascript', src: 'Bounds.js', async: false, body: true },
+        {
+          type: 'text/javascript',
+          src: 'Bounds.js',
+          async: false,
+          defer: false,
+          body: true
+        },
         {
           type: 'text/javascript',
           src: 'w09_main_ex02.js',

@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <script-ordering-error></script-ordering-error>
     <slider @:child-event="parentMethod"></slider>
     <isosurface></isosurface>
     <call-external-function></call-external-function>
@@ -14,6 +15,7 @@ import Slider from '../components/Slider'
 import ShaderBox from '../components/ShaderBox'
 import CallExternalFunction from '../components/CallExternalFunction'
 import Isosurface from '../components/Isosurface'
+import ScriptOrderingError from '../components/ScriptOrderingError'
 
 export default {
   name: 'App',
@@ -22,7 +24,8 @@ export default {
     Slider,
     ShaderBox,
     CallExternalFunction,
-    Isosurface
+    Isosurface,
+    ScriptOrderingError
   },
   methods: {
     parentMethod(fromChildVal) {
