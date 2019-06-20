@@ -8,14 +8,56 @@ export default {
   head() {
     return {
       script: [
-        { src: '/InfoVis2019/Final/task/dist/three.min.js' },
-        { src: '/InfoVis2019/Final/task/dist/TrackballControls.js' },
-        { src: 'https://naohisas.github.io/KVS.js/Build/KVS.min.js' },
-        { src: 'https://naohisas.github.io/KVS.js/Build/KVS2THREE.js' },
-        { src: 'https://naohisas.github.io/KVS.js/Source/KVSLobsterData.js' },
-        { src: '/InfoVis2019/Final/task/dist/Isosurfaces.js' },
-        { src: 'Bounds.js' },
-        { src: '/InfoVis2019/Final/task/dist/w09_main_ex02.js' }
+        {
+          type: 'text/javascript',
+          src: 'three.min.js',
+          async: false,
+          defer: false,
+          body: true
+        },
+        {
+          type: 'text/javascript',
+          src: 'https://naohisas.github.io/KVS.js/Build/KVS.min.js',
+          async: false,
+          defer: false,
+          body: true
+        },
+        {
+          type: 'text/javascript',
+          src: 'TrackballControls.js',
+          async: false,
+          defer: false,
+          body: true
+        },
+        {
+          type: 'text/javascript',
+          src: 'https://naohisas.github.io/KVS.js/Build/KVS2THREE.js',
+          async: false,
+          defer: false,
+          body: true
+        },
+        {
+          type: 'text/javascript',
+          src: 'https://naohisas.github.io/KVS.js/Source/KVSLobsterData.js',
+          async: false,
+          defer: false,
+          body: true
+        },
+        {
+          type: 'text/javascript',
+          src: 'Isosurfaces.js',
+          async: false,
+          defer: false,
+          body: true
+        },
+        { type: 'text/javascript', src: 'Bounds.js', async: false, body: true },
+        {
+          type: 'text/javascript',
+          src: 'w09_main_ex02.js',
+          async: false,
+          defer: false,
+          body: true
+        }
       ]
     }
   },
